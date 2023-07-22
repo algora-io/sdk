@@ -67,26 +67,8 @@ export function Bounties() {
   }, []);
 
   return (
-    <div>
-      <div className="mb-2 overflow-x-auto mt-6 flex rounded-lg border py-2 ltr:pr-4 rtl:pl-4 contrast-more:border-current contrast-more:dark:border-current border-indigo-100 bg-green-100 text-green-800 dark:border-indigo-400/30 dark:bg-indigo-600/20 dark:text-indigo-300">
-        <div className="mt-px select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2">
-          💸
-        </div>
-        <div className="w-full min-w-0 leading-7">
-          <p className="mt-6 leading-7 first:mt-0">
-            We&apos;re actively looking for and <strong>paying</strong> contributors. Check out our{' '}
-            <Link
-              href={`https://console.algora.io/org/${org}/bounties`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="!underline font-medium"
-            >
-              active bounties
-              <span className="sr-only"> (opens in a new tab)</span>
-            </Link>
-          </p>
-        </div>
-      </div>
+    <div className="space-y-2">
+      <Callout />
       <ul className="hidden sm:grid sm:grid-cols-3 gap-2">
         {bounties._tag === 'success' &&
           bounties.data.map((bounty) => (
@@ -94,7 +76,6 @@ export function Bounties() {
               <BountyCard bounty={bounty} />
             </li>
           ))}
-
         {bounties._tag === 'loading' &&
           [...Array(limit)].map((_, i) => (
             <li key={i}>
@@ -130,11 +111,35 @@ function BountyCard(props: { bounty: Bounty }) {
 
 function BountyCardSkeleton() {
   return (
-    <div className="h-[121px] animate-pulse rounded-lg bg-gray-200 dark:bg-gray-800">
+    <div className="h-[122px] animate-pulse rounded-lg bg-gray-200 dark:bg-gray-800">
       <div className="relative h-full p-4">
         <div className="mt-1 h-[25px] w-[59px] bg-gray-300 dark:bg-gray-700 rounded-md" />
         <div className="mt-2.5 h-[14px] w-[86px] bg-gray-300 dark:bg-gray-700 rounded-md" />
         <div className="mt-4 h-[20px] bg-gray-300 dark:bg-gray-700 rounded-md" />
+      </div>
+    </div>
+  );
+}
+
+function Callout() {
+  return (
+    <div className="overflow-x-auto mt-6 flex rounded-lg border py-2 ltr:pr-4 rtl:pl-4 contrast-more:border-current contrast-more:dark:border-current border-indigo-100 bg-green-100 text-green-800 dark:border-indigo-400/30 dark:bg-indigo-600/20 dark:text-indigo-300">
+      <div className="mt-px select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2">
+        💸
+      </div>
+      <div className="w-full min-w-0 leading-7">
+        <p className="mt-6 leading-7 first:mt-0">
+          We&apos;re actively looking for and <strong>paying</strong> contributors. Check out our{' '}
+          <Link
+            href={`https://console.algora.io/org/${org}/bounties`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="!underline font-medium"
+          >
+            active bounties
+            <span className="sr-only"> (opens in a new tab)</span>
+          </Link>
+        </p>
       </div>
     </div>
   );
