@@ -7,6 +7,10 @@
     "Zafer Cesur <zafer@algora.io>"
   ],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/algora-io/sdk.git"
+  },
   "keywords": [
     "sdk",
     "api",
@@ -25,9 +29,9 @@
     "format": "pnpm format:check --write",
     "format:check": "pnpm prettier --plugin-search-dir=. **/*.{cjs,mjs,ts,tsx,md,json} --ignore-path ./.gitignore --ignore-unknown --no-error-on-unmatched-pattern --check",
     "release": "changeset version",
-    "pub:beta": "pnpm build && npm publish --tag beta",
-    "pub:next": "pnpm build && npm publish --tag next",
-    "pub:release": "pnpm build && npm publish"
+    "pub:beta": "pnpm build && npm publish --tag beta --access public",
+    "pub:next": "pnpm build && npm publish --tag next --access public",
+    "pub:release": "pnpm build && npm publish --access public"
   },
   "dependencies": {
     "@trpc/client": "^10.0.0",
