@@ -91,7 +91,8 @@ function BountyCard(props: { bounty: Bounty }) {
   return (
     <Link
       href={props.bounty.task.url}
-      rel="noopener noreferrer"
+      target="_blank"
+      rel="noopener"
       className="block group relative h-full rounded-lg border border-gray-400/50 dark:border-indigo-500/50 bg-gradient-to-br from-gray-300/30 via-gray-300/40 to-gray-300/50 dark:from-indigo-600/20 dark:via-indigo-600/30 dark:to-indigo-600/40 md:gap-8 transition-colors hover:border-gray-400 hover:dark:border-indigo-500 hover:bg-gray-300/10 hover:dark:bg-gray-600/5 !no-underline"
     >
       <div className="relative h-full p-4">
@@ -133,7 +134,7 @@ function Callout() {
           <Link
             href={`https://console.algora.io/org/${org}/bounties`}
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener"
             className="!underline font-medium"
           >
             active bounties
