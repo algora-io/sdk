@@ -59,7 +59,7 @@ export function Bounties() {
     const ac = new AbortController();
 
     algora.bounty.list
-      .query({ org, limit }, { signal: ac.signal })
+      .query({ org, limit, status: 'active' }, { signal: ac.signal })
       .then(({ items: data }) => setBounties({ _tag: 'success', data }))
       .catch((error) => setBounties({ _tag: 'failure', error }));
 
