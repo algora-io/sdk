@@ -1,7 +1,7 @@
 {
-  "name": "agb",
-  "version": "0.0.1",
-  "description": "Algora SDK (commonJS)",
+  "name": "@algora/sdk",
+  "version": "0.1.2",
+  "description": "Algora SDK",
   "author": "Algora PBC. <info@algora.io> (https://algora.io)",
   "maintainers": [
     "Zafer Cesur <zafer@algora.io>"
@@ -9,7 +9,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kaf-lamed-beyt/sdk.git"
+    "url": "https://github.com/algora.io/sdk.git"
   },
   "files": [
     "dist/**/*",
