@@ -1,6 +1,6 @@
 {
   "name": "@algora/sdk",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Algora SDK",
   "author": "Algora PBC. <info@algora.io> (https://algora.io)",
   "maintainers": [
@@ -23,7 +23,8 @@
     "api",
     "typescript"
   ],
-  "main": "./dist/index.mjs",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "scripts": {
     "typecheck": "tsc",
