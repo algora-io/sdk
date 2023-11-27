@@ -1,0 +1,28 @@
+{
+  "srcProject": "../monorepo/packages/trpc",
+  "dstProject": ".",
+  "outDir": "types",
+  "outName": "root.d.ts",
+  "overwrite": true,
+  "include": {
+    "bountyRouter": [
+      "create",
+      "get",
+      "getClaim",
+      "list",
+      "listWithClaims",
+      "update"
+    ],
+    "orgRouter": [
+      "addMember",
+      "get",
+      "getEarningsByCountry",
+      "getLeaderboard",
+      "getMembers",
+      "getStats"
+    ]
+  },
+  "parserOptions": {
+    "appRouterAlias": "AppRouter"
+  }
+}
