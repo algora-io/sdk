@@ -1,12 +1,12 @@
 import { createTRPCProxyClient, httpBatchLink } from "@trpc/client";
 import { type inferRouterInputs, type inferRouterOutputs } from "@trpc/server";
 import superjson from "superjson";
-import { type AppRouter } from "types/root";
+import { type API } from "types/api";
 
-export type AlgoraInput = inferRouterInputs<AppRouter>;
-export type AlgoraOutput = inferRouterOutputs<AppRouter>;
+export type AlgoraInput = inferRouterInputs<API>;
+export type AlgoraOutput = inferRouterOutputs<API>;
 
-export const algora = createTRPCProxyClient<AppRouter>({
+export const algora = createTRPCProxyClient<API>({
   transformer: superjson,
   links: [
     httpBatchLink({

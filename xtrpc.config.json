@@ -2,7 +2,7 @@
   "srcProject": "../monorepo/packages/trpc",
   "dstProject": ".",
   "outDir": "types",
-  "outName": "root.d.ts",
+  "outName": "api.d.ts",
   "overwrite": true,
   "include": {
     "bountyRouter": [
