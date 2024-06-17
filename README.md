@@ -72,7 +72,7 @@ const { items, next_cursor } = await algora.bounty.list.query({ org: "acme" });
     return (
       <div className="space-y-2">
         <Callout />
-        <ul className="hidden sm:grid sm:grid-cols-3 gap-2">
+        <ul className="grid sm:grid-cols-3 gap-2">
           {bounties._tag === 'success' &&
             bounties.data.map((bounty) => (
               <li key={bounty.id}>
