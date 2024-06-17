@@ -284,13 +284,12 @@ const { items, next_cursor } = await algora.bounty.list.query({ org: "acme" });
   }
 
   .bounty-grid {
-    display: none;
+    display: grid;
+    gap: 0.5rem;
   }
 
   @media (min-width: 640px) {
     .bounty-grid {
-      display: grid;
-      gap: 0.5rem;
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
