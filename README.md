@@ -31,24 +31,24 @@ Alternatively, you can use the CDN build by adding these tags to your HTML:
 
 ## Examples
 
-### Bounty board (HTML & CSS)
-
 <details>
-  <summary>Code</summary>
+  <summary><h3>Bounty board (HTML & CSS)</h3></summary>
+
+  Add these tags to the `<head>` of your HTML:
 
   ```html
   <script src="https://cdn.jsdelivr.net/npm/@algora/sdk@0.3.1/dist/index.global.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/@algora/sdk@0.3.1/dist/index.css" rel="stylesheet" />
+  ```
 
+  Add a container for the bounty board to the `<body>` of your HTML:
+
+  ```html
   <div class="bounty-board" data-bounty-org="acme" data-bounty-limit="6" data-bounty-status="active">
   </div>
   ```
-</details>
 
-<details>
-  <summary>Stylesheet</summary>
-
-  Customize the styles to your liking:
+  Customize the styling as you like:
 
   ```css
   .bounty-board {
@@ -70,10 +70,8 @@ Alternatively, you can use the CDN build by adding these tags to your HTML:
   ```
 </details>
 
-### Bounty board (React & Tailwind)
-
 <details>
-  <summary>Code</summary>
+  <summary><h3>Bounty board (React & Tailwind)</h3></summary>
 
   ```tsx
   import { useEffect, useState } from 'react';
@@ -187,10 +185,8 @@ Alternatively, you can use the CDN build by adding these tags to your HTML:
   ```
 </details>
 
-### Bounty board (React & CSS)
-
 <details>
-  <summary>Code</summary>
+  <summary><h3>Bounty board (React & CSS)</h3></summary>
 
   ```tsx
   import { algora, type AlgoraOutput } from "@algora/sdk";
@@ -275,12 +271,10 @@ Alternatively, you can use the CDN build by adding these tags to your HTML:
     </div>
   );
   ```
-</details>
-
-<details>
-  <summary>Stylesheet</summary>
 
   ```css
+  /* bounties.css */
+
   .bounty-board {
     --gray-50: 210, 40%, 98%;
     --gray-100: 210, 40%, 96%;
@@ -511,10 +505,9 @@ Alternatively, you can use the CDN build by adding these tags to your HTML:
   ```
 </details>
 
-### Leaderboard (React & Tailwind)
 
 <details>
-  <summary>Code</summary>
+  <summary><h3>Leaderboard (React & Tailwind)</h3></summary>
 
   ```tsx
   import { useEffect, useMemo, useState } from "react";
