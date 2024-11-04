@@ -2,42 +2,90 @@
 
 ![npm (scoped)](https://img.shields.io/npm/v/@algora/sdk)
 
-## Quickstart
+## Showcase
 
-Install the SDK with the package manager of your choice
+### [Cal.com Jobs](https://cal.com/jobs)
+<a href="https://cal.com/jobs"><img src="https://raw.githubusercontent.com/algora-io/sdk/assets/bounties/calcom.png" alt="Cal.com Jobs" width="500" /></a>
 
-#### pnpm
+### [Remotion Docs](https://www.remotion.dev/docs/contributing/bounty) via [remotion-dev/remotion#2949](https://github.com/remotion-dev/remotion/pull/2949)
+<a href="https://www.remotion.dev/docs/contributing/bounty"><img src="https://raw.githubusercontent.com/algora-io/sdk/assets/bounties/remotion.png" alt="Remotion Docs" width="500" /></a>
 
-```bash
-pnpm add @algora/sdk
-```
+### [Tembo Blog](https://tembo.io/blog/algora-code-bounties) via [tembo-io/website#678](https://github.com/tembo-io/website/pull/678)
+<a href="https://tembo.io/blog/algora-code-bounties"><img src="https://raw.githubusercontent.com/algora-io/sdk/assets/bounties/tembo.png" alt="Tembo Blog" width="500" /></a>
 
-#### yarn
+### [Million.js Blog](https://old.million.dev/blog/million-v2.5.1) via [aidenybai/million#492](https://github.com/aidenybai/million/pull/492)
+<a href="https://old.million.dev/blog/million-v2.5.1"><img src="https://raw.githubusercontent.com/algora-io/sdk/assets/bounties/millionjs.png" alt="Million.js Blog" width="500" /></a>
 
-```bash
-yarn add @algora/sdk
-```
+## Installation
 
-#### npm
+### Option 1: Package manager
+
+Install the SDK with the package manager of your choice (npm, yarn, pnpm...)
 
 ```bash
 npm install @algora/sdk
 ```
 
-## Examples
-
-### Fetch bounties
-
 ```ts
 import { algora } from "@algora/sdk";
-
 const { items, next_cursor } = await algora.bounty.list.query({ org: "acme" });
 ```
 
-### Bounty cards (React & Tailwind)
+### Option 2: CDN
+
+Alternatively, you can use the CDN bundle by adding these tags to your HTML:
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/@algora/sdk@0.3.1/dist/index.global.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/@algora/sdk@0.3.1/dist/index.css" rel="stylesheet" />
+
+<div class="bounty-board" data-bounty-org="acme" data-bounty-limit="6" data-bounty-status="active">
+</div>
+```
+
+## Quickstart
 
 <details>
-  <summary>Code</summary>
+  <summary><h3>Bounty board (HTML & CSS)</h3></summary>
+
+  Add these tags to the `<head>` of your HTML:
+
+  ```html
+  <script src="https://cdn.jsdelivr.net/npm/@algora/sdk@0.3.1/dist/index.global.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/@algora/sdk@0.3.1/dist/index.css" rel="stylesheet" />
+  ```
+
+  Add a container for the bounty board to the `<body>` of your HTML:
+
+  ```html
+  <div class="bounty-board" data-bounty-org="acme" data-bounty-limit="6" data-bounty-status="active">
+  </div>
+  ```
+
+  Customize the styling as you like:
+
+  ```css
+  .bounty-board {
+    max-width: 800px;
+    font-family: "Inter";
+    --line-clamp: 2;
+    --accent-50: 226, 100%, 97%;
+    --accent-100: 226, 100%, 94%;
+    --accent-200: 228, 96%, 89%;
+    --accent-300: 230, 94%, 82%;
+    --accent-400: 234, 89%, 74%;
+    --accent-500: 239, 84%, 67%;
+    --accent-600: 243, 75%, 59%;
+    --accent-700: 245, 58%, 51%;
+    --accent-800: 244, 55%, 41%;
+    --accent-900: 242, 47%, 34%;
+    --accent-950: 244, 47%, 20%;
+  }
+  ```
+</details>
+
+<details>
+  <summary><h3>Bounty board (React & Tailwind)</h3></summary>
 
   ```tsx
   import { useEffect, useState } from 'react';
@@ -151,10 +199,8 @@ const { items, next_cursor } = await algora.bounty.list.query({ org: "acme" });
   ```
 </details>
 
-### Bounty cards (React & CSS)
-
 <details>
-  <summary>Code</summary>
+  <summary><h3>Bounty board (React & CSS)</h3></summary>
 
   ```tsx
   import { algora, type AlgoraOutput } from "@algora/sdk";
@@ -239,53 +285,52 @@ const { items, next_cursor } = await algora.bounty.list.query({ org: "acme" });
     </div>
   );
   ```
-</details>
-
-<details>
-  <summary>Stylesheet</summary>
 
   ```css
+  /* bounties.css */
+
   .bounty-board {
-    --gray-50: 248, 250, 252;
-    --gray-100: 241, 245, 249;
-    --gray-200: 226, 232, 240;
-    --gray-300: 203, 213, 225;
-    --gray-400: 148, 163, 184;
-    --gray-500: 100, 116, 139;
-    --gray-600: 71, 85, 105;
-    --gray-700: 51, 65, 85;
-    --gray-800: 30, 41, 59;
-    --gray-900: 15, 23, 42;
-    --gray-950: 2, 6, 23;
+    --gray-50: 210, 40%, 98%;
+    --gray-100: 210, 40%, 96%;
+    --gray-200: 214, 32%, 91%;
+    --gray-300: 213, 27%, 84%;
+    --gray-400: 215, 20%, 65%;
+    --gray-500: 215, 16%, 47%;
+    --gray-600: 215, 19%, 35%;
+    --gray-700: 215, 25%, 27%;
+    --gray-800: 217, 33%, 17%;
+    --gray-900: 222, 47%, 11%;
+    --gray-950: 229, 84%, 5%;
 
-    --accent-50: 239, 246, 255;
-    --accent-100: 219, 234, 254;
-    --accent-200: 191, 219, 254;
-    --accent-300: 147, 197, 253;
-    --accent-400: 96, 165, 250;
-    --accent-500: 59, 130, 246;
-    --accent-600: 37, 99, 235;
-    --accent-700: 29, 78, 216;
-    --accent-800: 30, 64, 175;
-    --accent-900: 30, 58, 138;
-    --accent-950: 23, 37, 84;
+    --accent-50: 226, 100%, 97%;
+    --accent-100: 226, 100%, 94%;
+    --accent-200: 228, 96%, 89%;
+    --accent-300: 230, 94%, 82%;
+    --accent-400: 234, 89%, 74%;
+    --accent-500: 239, 84%, 67%;
+    --accent-600: 243, 75%, 59%;
+    --accent-700: 245, 58%, 51%;
+    --accent-800: 244, 55%, 41%;
+    --accent-900: 242, 47%, 34%;
+    --accent-950: 244, 47%, 20%;
 
-    --green-50: 236, 253, 245;
-    --green-100: 209, 250, 229;
-    --green-200: 167, 243, 208;
-    --green-300: 110, 231, 183;
-    --green-400: 52, 211, 153;
-    --green-500: 16, 185, 129;
-    --green-600: 5, 150, 105;
-    --green-700: 4, 120, 87;
-    --green-800: 6, 95, 70;
-    --green-900: 6, 78, 59;
-    --green-950: 2, 44, 34;
+    --green-50: 152, 81%, 96%;
+    --green-100: 149, 80%, 90%;
+    --green-200: 152, 76%, 80%;
+    --green-300: 156, 72%, 67%;
+    --green-400: 158, 64%, 52%;
+    --green-500: 160, 84%, 39%;
+    --green-600: 161, 94%, 30%;
+    --green-700: 163, 94%, 24%;
+    --green-800: 163, 88%, 20%;
+    --green-900: 164, 86%, 16%;
+    --green-950: 166, 91%, 9%;
   }
 
   .bounty-board {
     display: grid;
     gap: 0.5rem;
+    width: 100%;
   }
 
   @media (min-width: 640px) {
@@ -305,16 +350,16 @@ const { items, next_cursor } = await algora.bounty.list.query({ org: "acme" });
   }
 
   .bounty-board {
-    --gradient-to: rgba(var(--accent-400), 0.4);
-    --gradient-from: rgba(var(--accent-400), 0.2);
-    --gradient-stops: var(--gradient-from), rgba(var(--accent-400), 0.3),
+    --gradient-to: hsla(var(--accent-400), 0.4);
+    --gradient-from: hsla(var(--accent-400), 0.2);
+    --gradient-stops: var(--gradient-from), hsla(var(--accent-400), 0.3),
       var(--gradient-to);
   }
 
   .bounty-board.dark {
-    --gradient-to: rgba(var(--accent-600), 0.2);
-    --gradient-from: rgba(var(--accent-600), 0.3);
-    --gradient-stops: var(--gradient-from), rgba(var(--accent-600), 0.4),
+    --gradient-to: hsla(var(--accent-600), 0.2);
+    --gradient-from: hsla(var(--accent-600), 0.3);
+    --gradient-stops: var(--gradient-from), hsla(var(--accent-600), 0.4),
       var(--gradient-to);
   }
 
@@ -336,7 +381,7 @@ const { items, next_cursor } = await algora.bounty.list.query({ org: "acme" });
   }
 
   .bounty-board .bounty-card:hover {
-    border-color: rgb(var(--gray-400));
+    border-color: hsl(var(--gray-400));
   }
 
   .bounty-board .bounty-card .bounty-content {
@@ -349,14 +394,14 @@ const { items, next_cursor } = await algora.bounty.list.query({ org: "acme" });
     font-size: 1.5rem;
     line-height: 2rem;
     font-weight: 700;
-    color: rgb(var(--green-500));
+    color: hsl(var(--green-500));
   }
 
   .bounty-board .bounty-card .bounty-issue {
     margin-top: 0.125rem;
     font-size: 0.875rem;
     line-height: 1.25rem;
-    color: rgb(var(--gray-700));
+    color: hsl(var(--gray-700));
   }
 
   .bounty-board .bounty-card .bounty-title {
@@ -365,50 +410,54 @@ const { items, next_cursor } = await algora.bounty.list.query({ org: "acme" });
     line-height: 1.75rem;
     font-weight: 500;
     line-height: 1.25;
-    color: rgb(var(--gray-800));
+    color: hsl(var(--gray-800));
     overflow-wrap: break-word;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--line-clamp);
   }
 
   .bounty-board.dark .bounty-card .bounty-reward {
-    color: rgb(var(--green-400));
+    color: hsl(var(--green-400));
   }
 
   .bounty-board.dark .bounty-card .bounty-issue {
-    color: rgb(var(--accent-200));
+    color: hsl(var(--accent-200));
   }
 
   .bounty-board.dark .bounty-card .bounty-title {
-    color: rgb(var(--accent-50));
+    color: hsl(var(--accent-50));
   }
 
   .bounty-board .bounty-card:hover {
-    background-color: rgba(var(--gray-300), 0.1);
-    border-color: rgb(var(--gray-400));
+    background-color: hsla(var(--gray-300), 0.1);
+    border-color: hsl(var(--gray-400));
   }
 
   .bounty-board .bounty-card:hover .bounty-reward {
-    color: rgb(var(--green-600));
+    color: hsl(var(--green-600));
   }
 
   .bounty-board .bounty-card:hover .bounty-issue {
-    color: rgb(var(--gray-800));
+    color: hsl(var(--gray-800));
   }
 
   .bounty-board .bounty-card:hover .bounty-title {
-    color: rgb(var(--gray-900));
+    color: hsl(var(--gray-900));
   }
 
   .bounty-board.dark .bounty-card:hover {
-    background-color: rgba(var(--gray-600), 0.05);
-    border-color: rgb(var(--accent-500));
+    background-color: hsla(var(--gray-600), 0.05);
+    border-color: hsl(var(--accent-500));
   }
 
   .bounty-board.dark .bounty-card:hover .bounty-reward {
-    color: rgb(var(--green-300));
+    color: hsl(var(--green-300));
   }
 
   .bounty-board.dark .bounty-card:hover .bounty-issue {
-    color: rgb(var(--accent-100));
+    color: hsl(var(--accent-100));
   }
 
   .bounty-board.dark .bounty-card:hover .bounty-title {
@@ -417,13 +466,13 @@ const { items, next_cursor } = await algora.bounty.list.query({ org: "acme" });
 
   .bounty-board .bounty-skeleton {
     border-radius: 0.5rem;
-    background-color: rgb(var(--gray-200));
+    background-color: hsl(var(--gray-200));
     animation: bounty-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     height: 122px;
   }
 
   .bounty-board.dark .bounty-skeleton {
-    background-color: rgb(var(--gray-800));
+    background-color: hsl(var(--gray-800));
   }
 
   .bounty-board .bounty-skeleton .bounty-content {
@@ -437,7 +486,7 @@ const { items, next_cursor } = await algora.bounty.list.query({ org: "acme" });
     border-radius: 0.375rem;
     height: 25px;
     width: 59px;
-    background-color: rgb(var(--gray-300));
+    background-color: hsl(var(--gray-300));
   }
 
   .bounty-board .bounty-skeleton .bounty-issue {
@@ -445,34 +494,34 @@ const { items, next_cursor } = await algora.bounty.list.query({ org: "acme" });
     border-radius: 0.375rem;
     height: 14px;
     width: 86px;
-    background-color: rgb(var(--gray-300));
+    background-color: hsl(var(--gray-300));
   }
 
   .bounty-board .bounty-skeleton .bounty-title {
     margin-top: 1rem;
     border-radius: 0.375rem;
     height: 20px;
-    background-color: rgb(var(--gray-300));
+    background-color: hsl(var(--gray-300));
   }
 
   .bounty-board.dark .bounty-skeleton .bounty-reward {
-    background-color: rgb(var(--gray-700));
+    background-color: hsl(var(--gray-700));
   }
 
   .bounty-board.dark .bounty-skeleton .bounty-issue {
-    background-color: rgb(var(--gray-700));
+    background-color: hsl(var(--gray-700));
   }
 
   .bounty-board.dark .bounty-skeleton .bounty-title {
-    background-color: rgb(var(--gray-700));
+    background-color: hsl(var(--gray-700));
   }
+
   ```
 </details>
 
-### Leaderboard (React & Tailwind)
 
 <details>
-  <summary>Code</summary>
+  <summary><h3>Leaderboard (React & Tailwind)</h3></summary>
 
   ```tsx
   import { useEffect, useMemo, useState } from "react";
