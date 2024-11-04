@@ -195,7 +195,7 @@ const { items, next_cursor } = await algora.bounty.list.query({ org: "acme" });
     }, []);
 
     return (
-      <div className={`bounty-grid ${colorMode}`}>
+      <div className={`bounty-board ${colorMode}`}>
         {bounties._tag === "success" &&
           bounties.data.map((bounty) => (
             <div key={bounty.id}>
@@ -245,7 +245,7 @@ const { items, next_cursor } = await algora.bounty.list.query({ org: "acme" });
   <summary>Stylesheet</summary>
 
   ```css
-  .bounty-grid {
+  .bounty-board {
     --gray-50: 248, 250, 252;
     --gray-100: 241, 245, 249;
     --gray-200: 226, 232, 240;
@@ -283,13 +283,13 @@ const { items, next_cursor } = await algora.bounty.list.query({ org: "acme" });
     --green-950: 2, 44, 34;
   }
 
-  .bounty-grid {
+  .bounty-board {
     display: grid;
     gap: 0.5rem;
   }
 
   @media (min-width: 640px) {
-    .bounty-grid {
+    .bounty-board {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
@@ -304,21 +304,21 @@ const { items, next_cursor } = await algora.bounty.list.query({ org: "acme" });
     }
   }
 
-  .bounty-grid {
+  .bounty-board {
     --gradient-to: rgba(var(--accent-400), 0.4);
     --gradient-from: rgba(var(--accent-400), 0.2);
     --gradient-stops: var(--gradient-from), rgba(var(--accent-400), 0.3),
       var(--gradient-to);
   }
 
-  .bounty-grid.dark {
+  .bounty-board.dark {
     --gradient-to: rgba(var(--accent-600), 0.2);
     --gradient-from: rgba(var(--accent-600), 0.3);
     --gradient-stops: var(--gradient-from), rgba(var(--accent-600), 0.4),
       var(--gradient-to);
   }
 
-  .bounty-grid .bounty-card {
+  .bounty-board .bounty-card {
     text-decoration-line: none;
     display: block;
     position: relative;
@@ -328,38 +328,38 @@ const { items, next_cursor } = await algora.bounty.list.query({ org: "acme" });
     background-image: linear-gradient(to bottom right, var(--gradient-stops));
   }
 
-  .bounty-grid .bounty-card *,
-  .bounty-grid .bounty-skeleton * {
+  .bounty-board .bounty-card *,
+  .bounty-board .bounty-skeleton * {
     transition-property: background-color, color, border-color;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 300ms;
   }
 
-  .bounty-grid .bounty-card:hover {
+  .bounty-board .bounty-card:hover {
     border-color: rgb(var(--gray-400));
   }
 
-  .bounty-grid .bounty-card .bounty-content {
+  .bounty-board .bounty-card .bounty-content {
     position: relative;
     padding: 1rem;
     height: 100%;
   }
 
-  .bounty-grid .bounty-card .bounty-reward {
+  .bounty-board .bounty-card .bounty-reward {
     font-size: 1.5rem;
     line-height: 2rem;
     font-weight: 700;
     color: rgb(var(--green-500));
   }
 
-  .bounty-grid .bounty-card .bounty-issue {
+  .bounty-board .bounty-card .bounty-issue {
     margin-top: 0.125rem;
     font-size: 0.875rem;
     line-height: 1.25rem;
     color: rgb(var(--gray-700));
   }
 
-  .bounty-grid .bounty-card .bounty-title {
+  .bounty-board .bounty-card .bounty-title {
     margin-top: 0.75rem;
     font-size: 1.125rem;
     line-height: 1.75rem;
@@ -369,70 +369,70 @@ const { items, next_cursor } = await algora.bounty.list.query({ org: "acme" });
     overflow-wrap: break-word;
   }
 
-  .bounty-grid.dark .bounty-card .bounty-reward {
+  .bounty-board.dark .bounty-card .bounty-reward {
     color: rgb(var(--green-400));
   }
 
-  .bounty-grid.dark .bounty-card .bounty-issue {
+  .bounty-board.dark .bounty-card .bounty-issue {
     color: rgb(var(--accent-200));
   }
 
-  .bounty-grid.dark .bounty-card .bounty-title {
+  .bounty-board.dark .bounty-card .bounty-title {
     color: rgb(var(--accent-50));
   }
 
-  .bounty-grid .bounty-card:hover {
+  .bounty-board .bounty-card:hover {
     background-color: rgba(var(--gray-300), 0.1);
     border-color: rgb(var(--gray-400));
   }
 
-  .bounty-grid .bounty-card:hover .bounty-reward {
+  .bounty-board .bounty-card:hover .bounty-reward {
     color: rgb(var(--green-600));
   }
 
-  .bounty-grid .bounty-card:hover .bounty-issue {
+  .bounty-board .bounty-card:hover .bounty-issue {
     color: rgb(var(--gray-800));
   }
 
-  .bounty-grid .bounty-card:hover .bounty-title {
+  .bounty-board .bounty-card:hover .bounty-title {
     color: rgb(var(--gray-900));
   }
 
-  .bounty-grid.dark .bounty-card:hover {
+  .bounty-board.dark .bounty-card:hover {
     background-color: rgba(var(--gray-600), 0.05);
     border-color: rgb(var(--accent-500));
   }
 
-  .bounty-grid.dark .bounty-card:hover .bounty-reward {
+  .bounty-board.dark .bounty-card:hover .bounty-reward {
     color: rgb(var(--green-300));
   }
 
-  .bounty-grid.dark .bounty-card:hover .bounty-issue {
+  .bounty-board.dark .bounty-card:hover .bounty-issue {
     color: rgb(var(--accent-100));
   }
 
-  .bounty-grid.dark .bounty-card:hover .bounty-title {
+  .bounty-board.dark .bounty-card:hover .bounty-title {
     color: white;
   }
 
-  .bounty-grid .bounty-skeleton {
+  .bounty-board .bounty-skeleton {
     border-radius: 0.5rem;
     background-color: rgb(var(--gray-200));
     animation: bounty-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     height: 122px;
   }
 
-  .bounty-grid.dark .bounty-skeleton {
+  .bounty-board.dark .bounty-skeleton {
     background-color: rgb(var(--gray-800));
   }
 
-  .bounty-grid .bounty-skeleton .bounty-content {
+  .bounty-board .bounty-skeleton .bounty-content {
     position: relative;
     padding: 1rem;
     height: 100%;
   }
 
-  .bounty-grid .bounty-skeleton .bounty-reward {
+  .bounty-board .bounty-skeleton .bounty-reward {
     margin-top: 0.25rem;
     border-radius: 0.375rem;
     height: 25px;
@@ -440,7 +440,7 @@ const { items, next_cursor } = await algora.bounty.list.query({ org: "acme" });
     background-color: rgb(var(--gray-300));
   }
 
-  .bounty-grid .bounty-skeleton .bounty-issue {
+  .bounty-board .bounty-skeleton .bounty-issue {
     margin-top: 0.625rem;
     border-radius: 0.375rem;
     height: 14px;
@@ -448,22 +448,22 @@ const { items, next_cursor } = await algora.bounty.list.query({ org: "acme" });
     background-color: rgb(var(--gray-300));
   }
 
-  .bounty-grid .bounty-skeleton .bounty-title {
+  .bounty-board .bounty-skeleton .bounty-title {
     margin-top: 1rem;
     border-radius: 0.375rem;
     height: 20px;
     background-color: rgb(var(--gray-300));
   }
 
-  .bounty-grid.dark .bounty-skeleton .bounty-reward {
+  .bounty-board.dark .bounty-skeleton .bounty-reward {
     background-color: rgb(var(--gray-700));
   }
 
-  .bounty-grid.dark .bounty-skeleton .bounty-issue {
+  .bounty-board.dark .bounty-skeleton .bounty-issue {
     background-color: rgb(var(--gray-700));
   }
 
-  .bounty-grid.dark .bounty-skeleton .bounty-title {
+  .bounty-board.dark .bounty-skeleton .bounty-title {
     background-color: rgb(var(--gray-700));
   }
   ```
