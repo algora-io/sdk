@@ -19,7 +19,7 @@ const { items, next_cursor } = await algora.bounty.list.query({ org: "acme" });
 
 ### Option 2: CDN
 
-Alternatively, you can use the CDN build by adding these tags to your HTML:
+Alternatively, you can use the CDN bundle by adding these tags to your HTML:
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/@algora/sdk@0.3.1/dist/index.global.js"></script>
