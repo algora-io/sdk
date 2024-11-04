@@ -15,4 +15,5 @@ export default defineConfig({
   outDir: "dist",
   onSuccess: isDev ? "node dist/index.js" : undefined,
   noExternal: ["@trpc/client", "@trpc/server", "superjson"],
+  publicDir: "public",
 });
