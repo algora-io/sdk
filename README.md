@@ -2,6 +2,20 @@
 
 ![npm (scoped)](https://img.shields.io/npm/v/@algora/sdk)
 
+## Showcase
+
+### [Cal.com Jobs](https://cal.com/jobs)
+<a href="https://cal.com/jobs"><img src="https://raw.githubusercontent.com/algora-io/sdk/assets/bounties/calcom.png" alt="Cal.com Jobs" width="500" /></a>
+
+### [Remotion Docs](https://www.remotion.dev/docs/contributing/bounty) via [remotion-dev/remotion#2949](https://github.com/remotion-dev/remotion/pull/2949)
+<a href="https://www.remotion.dev/docs/contributing/bounty"><img src="https://raw.githubusercontent.com/algora-io/sdk/assets/bounties/remotion.png" alt="Remotion Docs" width="500" /></a>
+
+### [Tembo Blog](https://tembo.io/blog/algora-code-bounties) via [tembo-io/website#678](https://github.com/tembo-io/website/pull/678)
+<a href="https://tembo.io/blog/algora-code-bounties"><img src="https://raw.githubusercontent.com/algora-io/sdk/assets/bounties/tembo.png" alt="Tembo Blog" width="500" /></a>
+
+### [Million.js Blog](https://old.million.dev/blog/million-v2.5.1) via [aidenybai/million#492](https://github.com/aidenybai/million/pull/492)
+<a href="https://old.million.dev/blog/million-v2.5.1"><img src="https://raw.githubusercontent.com/algora-io/sdk/assets/bounties/millionjs.png" alt="Million.js Blog" width="500" /></a>
+
 ## Installation
 
 ### Option 1: Package manager
@@ -734,10 +748,3 @@ Alternatively, you can use the CDN bundle by adding these tags to your HTML:
 
   ```
 </details>
-
-## Examples
-
-- [Cal.com Jobs](https://cal.com/jobs)
-- [Remotion Docs](https://www.remotion.dev/docs/contributing/bounty) via PR [remotion-dev/remotion#2949](https://github.com/remotion-dev/remotion/pull/2949)
-- [Tembo Blog](https://tembo.io/blog/algora-code-bounties) via PR [tembo-io/website#678](https://github.com/tembo-io/website/pull/678)
-- [Million.js Blog](https://old.million.dev/blog/million-v2.5.1) via PR [aidenybai/million#492](https://github.com/aidenybai/million/pull/492)
