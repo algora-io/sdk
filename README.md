@@ -2,7 +2,7 @@
 
 ![npm (scoped)](https://img.shields.io/npm/v/@algora/sdk)
 
-## Quickstart
+## Installation
 
 ### Option 1: Package manager
 
@@ -29,7 +29,7 @@ Alternatively, you can use the CDN build by adding these tags to your HTML:
 </div>
 ```
 
-## Examples
+## Quickstart
 
 <details>
   <summary><h3>Bounty board (HTML & CSS)</h3></summary>
@@ -734,3 +734,10 @@ Alternatively, you can use the CDN build by adding these tags to your HTML:
 
   ```
 </details>
+
+## Examples
+
+- [Cal.com Jobs](https://cal.com/jobs)
+- [Remotion Docs](https://www.remotion.dev/docs/contributing/bounty) via PR [remotion-dev/remotion#2949](https://github.com/remotion-dev/remotion/pull/2949)
+- [Tembo Blog](https://tembo.io/blog/algora-code-bounties) via PR [tembo-io/website#678](https://github.com/tembo-io/website/pull/678)
+- [Million.js Blog](https://old.million.dev/blog/million-v2.5.1) via PR [aidenybai/million#492](https://github.com/aidenybai/million/pull/492)
